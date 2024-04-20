@@ -3,8 +3,7 @@ import defaultTheme from "../../assets/styles/themes/default";
 import { ThemeProvider } from "styled-components";
 import { Container } from "./styles";
 import Header from "./Header";
-import ContactsList from "../ContactsList";
-
+import ContactsList from "./ContactsList";
 
 function App() {
   return (
