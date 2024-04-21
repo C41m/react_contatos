@@ -10,7 +10,7 @@ import Modal from "../../Modal";
 export default function ContactsList() {
   return (
     <Container>
-      <Modal />
+      <Modal danger />
 
       <Header>
         <strong>3 Contatos</strong>
