@@ -1,16 +1,22 @@
+import { Link } from "react-router-dom";
+
 import { Container, Header, ListContainer, Card } from "./styles";
 
 import arrow from "../../../assets/styles/images/icons/arrow.svg";
 import edit from "../../../assets/styles/images/icons/edit.svg";
 import trash from "../../../assets/styles/images/icons/trash.svg";
+import Modal from "../../Modal";
 
 export default function ContactsList() {
   return (
     <Container>
+      <Modal />
+
       <Header>
         <strong>3 Contatos</strong>
-        <a href="/">Novo Contato</a>
+        <Link to="/new">Novo Contato</Link>
       </Header>
+
       <ListContainer>
         <header>
           <button type="button">
@@ -29,47 +35,9 @@ export default function ContactsList() {
           </div>
 
           <div className="actions">
-            <a href="/">
+            <Link to="/edit/123">
               <img src={edit} alt="Edit" />
-            </a>
-            <button type="button">
-              <img src={trash} alt="Trash" />
-            </button>
-          </div>
-        </Card>
-        <Card>
-          <div className="info">
-            <div className="contact-name">
-              <strong>Caio Fernando</strong>
-              <small>Instagram</small>
-            </div>
-            <span>caiofernando@gmail.com</span>
-            <span>(85) 99999-9999</span>
-          </div>
-
-          <div className="actions">
-            <a href="/">
-              <img src={edit} alt="Edit" />
-            </a>
-            <button type="button">
-              <img src={trash} alt="Trash" />
-            </button>
-          </div>
-        </Card>
-        <Card>
-          <div className="info">
-            <div className="contact-name">
-              <strong>Caio Fernando</strong>
-              <small>Instagram</small>
-            </div>
-            <span>caiofernando@gmail.com</span>
-            <span>(85) 99999-9999</span>
-          </div>
-
-          <div className="actions">
-            <a href="/">
-              <img src={edit} alt="Edit" />
-            </a>
+            </Link>
             <button type="button">
               <img src={trash} alt="Trash" />
             </button>
