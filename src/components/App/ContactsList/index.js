@@ -6,12 +6,13 @@ import arrow from "../../../assets/styles/images/icons/arrow.svg";
 import edit from "../../../assets/styles/images/icons/edit.svg";
 import trash from "../../../assets/styles/images/icons/trash.svg";
 import Modal from "../../Modal";
+import Loader from "../../Loader";
 
 export default function ContactsList() {
   return (
     <Container>
-      <Modal danger />
-
+      {/* <Modal danger /> */}
+        {/* <Loader/> */}
       <Header>
         <strong>3 Contatos</strong>
         <Link to="/new">Novo Contato</Link>

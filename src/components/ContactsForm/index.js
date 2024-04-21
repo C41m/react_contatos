@@ -11,8 +11,8 @@ export default function ContactForm({ buttonLabel }) {
         <Input placeholder="Nome Completo" />
       </FormGroup>
 
-      <FormGroup>
-        <Input placeholder="E-mail" />
+      <FormGroup error="Formato do e-mail é invalido">
+        <Input placeholder="E-mail" error/>
       </FormGroup>
 
       <FormGroup>
