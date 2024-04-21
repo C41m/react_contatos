@@ -26,7 +26,7 @@ export const Header = styled.header`
 
     &:hover {
       background: ${({ theme }) => theme.primary.main};
-      color: ${({ theme }) => theme.gray[200]};
+      color: ${({ theme }) => theme.background};
     }
   }
 `;
@@ -61,7 +61,7 @@ export const Card = styled.div`
   justify-content: space-between;
 
   & + & {
-    margin-top: 16px
+    margin-top: 16px;
   }
 
   .info {
