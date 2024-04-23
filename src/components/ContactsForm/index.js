@@ -14,7 +14,10 @@ export default function ContactForm({ buttonLabel }) {
   const [phone, setPhone] = useState("");
   const [category, setCategory] = useState("");
 
-  const { setError, removeError, getErrorMessageByFieldName } = useErrors();
+  const { setError, removeError, getErrorMessageByFieldName, errors } =
+    useErrors();
+
+  const isFormValid = name && errors.length === 0;
 
   function handleNameChange(event) {
     setName(event.target.value);
@@ -39,13 +42,14 @@ export default function ContactForm({ buttonLabel }) {
   function handlePhoneChange(event) {
     setPhone(formatPhone(event.target.value));
   }
+
   function handleSubmit(event) {
     event.preventDefault();
 
     console.log({
       name,
       email,
-      phone: phone.replace(/\D/g, ''),
+      phone: phone.replace(/\D/g, ""),
       category,
     });
   }
@@ -55,7 +59,7 @@ export default function ContactForm({ buttonLabel }) {
       <FormGroup error={getErrorMessageByFieldName("name")}>
         <Input
           error={getErrorMessageByFieldName("name")}
-          placeholder="Nome"
+          placeholder="Nome *"
           value={name}
           onChange={handleNameChange}
         />
@@ -90,8 +94,11 @@ export default function ContactForm({ buttonLabel }) {
           <option value="discord">Discord</option>
         </Select>
       </FormGroup>
+
       <ButtonContainer>
-        <Button type="submit">{buttonLabel}</Button>
+        <Button type="submit" disabled={!isFormValid}>
+          {buttonLabel}
+        </Button>
       </ButtonContainer>
     </Form>
   );
